@@ -37,6 +37,7 @@ class Common(Configuration):
         'django.contrib.admin',
     )
     THIRD_PARTY_APPS = (
+        'djangorestframework', # Django REST Framework
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
         'allauth',  # registration

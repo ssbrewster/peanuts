@@ -1,6 +1,9 @@
 # Bleeding edge Django
 django==1.7
 
+# Django REST Framework
+djangorestframework==3.0.3
+
 # Configuration
 django-configurations==0.8
 django-secure==1.0
