@@ -1,6 +1,6 @@
 from django.db import models
 
-from users.models import User
+from peanuts.users.models import User
 
 
 class Article(models.Model):
