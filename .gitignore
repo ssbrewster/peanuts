@@ -52,3 +52,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Pycharm
+*.idea/
+
+# grunt and sass live reload
+node_modules/
+
