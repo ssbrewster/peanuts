@@ -35,5 +35,5 @@ django-autoslug==1.7.2
 # Useful things
 django-avatar==2.0
 
-
-# Your custom requirements go here
+# For unit tests that don't rely on static fixtures
+factory_boy==2.4.1

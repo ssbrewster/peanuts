@@ -43,6 +43,7 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'factory_boy', # unit test data
     )
 
     # Apps specific for this project go here.
