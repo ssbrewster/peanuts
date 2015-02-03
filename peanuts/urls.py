@@ -6,11 +6,22 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+from articles import views
+from rest_framework.routers import DefaultRouter
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+# Create the router
+router = DefaultRouter()
+
+# Articles
+router.register(r'articles', views.ArticleViewSet)
+
+urlpatterns = [
+    url('^', include(router.urls)),
+    url('^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$',  # noqa
         TemplateView.as_view(template_name='pages/home.html'),
         name="home"),
@@ -28,6 +39,4 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable avatars
     url(r'^avatar/', include('avatar.urls')),
 
-    # Your stuff: custom urls go here
-
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
