@@ -18,6 +18,7 @@ router = DefaultRouter()
 
 # Articles
 router.register(r'articles', views.ArticleViewSet)
+router.register(r'article-list', views.ArticleViewSet)
 
 urlpatterns = [
     url('^', include(router.urls)),

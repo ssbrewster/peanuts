@@ -23,7 +23,7 @@ class ArticlesTests(APITestCase):
         Test that the get method to list all articles is successful and returns
         an HTTP_201_CREATED status_code
         """
-        url = reverse("articles")
+        url = reverse("article-list")
         response = self.client.get(url, format='json')
         self.assertTrue(status.is_success(response.status_code))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
