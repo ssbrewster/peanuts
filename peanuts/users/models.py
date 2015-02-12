@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 # Subclass AbstractUser
-class Author(AbstractUser):
+class User(AbstractUser):
 
     def __unicode__(self):
         return self.username
