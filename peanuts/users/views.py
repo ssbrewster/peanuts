@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.core.urlresolvers import reverse
+from django.views.generic import RedirectView
 from rest_framework import viewsets
 from braces.views import LoginRequiredMixin
 
