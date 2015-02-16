@@ -17,13 +17,8 @@ admin.autodiscover()
 # Create the router
 router = DefaultRouter()
 
-# Articles
-router.register(r'article-detail', articles_views.ArticleViewSet)
-router.register(r'article-list', articles_views.ArticleViewSet)
-
-# Users
-router.register(r'user-detail', users_views.UserViewSet)
-router.register(r'user-list', users_views.UserViewSet)
+router.register(r'articles', articles_views.ArticleViewSet)
+router.register(r'users', users_views.UserViewSet)
 
 urlpatterns = [
     url('^', include(router.urls)),
