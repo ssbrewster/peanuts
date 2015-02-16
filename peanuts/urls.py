@@ -6,8 +6,8 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
-from articles import views
-from users import views
+from articles import views as articles_views
+from users import views as users_views
 from rest_framework.routers import DefaultRouter
 
 # Uncomment the next two lines to enable the admin:
@@ -18,12 +18,12 @@ admin.autodiscover()
 router = DefaultRouter()
 
 # Articles
-router.register(r'article-detail', views.ArticleViewSet)
-router.register(r'article-list', views.ArticleViewSet)
+router.register(r'article-detail', articles_views.ArticleViewSet)
+router.register(r'article-list', articles_views.ArticleViewSet)
 
 # Users
-router.register(r'user-detail', views.UserViewSet)
-router.register(r'user-list', views.UserViewSet)
+router.register(r'user-detail', users_views.UserViewSet)
+router.register(r'user-list', users_views.UserViewSet)
 
 urlpatterns = [
     url('^', include(router.urls)),
