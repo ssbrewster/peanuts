@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Article
 
 
-class ArticleSerializer(HyperlinkedModelSerializer):
+class ArticleSerializer(serializers.HyperlinkedModelSerializer):
     author = serializers.HyperlinkedRelatedField(view_name='user-detail', lookup_field='username')
 
     class Meta:
