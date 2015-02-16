@@ -1,4 +1,4 @@
-from django.core.urlresolvers import reversed
+from django.core.urlresolvers import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
@@ -10,9 +10,9 @@ class AuthorTests(APITestCase):
         returns an HTTP_201_CREATED and the data in the response is equal to
         the data in the post method
         """
-        url = reverse("author-detail")
+        url = reverse("user-detail")
         data = {"username": "Mr Bloggy"}
         response = self.client.post(url, data, format='json')
         self.assertTrue(status.is_success(response.status_code))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(response.data, data)}
+        self.assertEqual(response.data, data)
