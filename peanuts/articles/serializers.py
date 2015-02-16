@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import Article
 
 
-class ArticleSerializer(serializers.HyperlinkedModelSerializer):
-    author = serializers.HyperlinkedRelatedField(view_name='author-detail', read_only='True')
+class ArticleSerializer(HyperlinkedModelSerializer):
+    author = serializers.HyperlinkedRelatedField(view_name='user-detail', lookup_field='username')
 
     class Meta:
         model = Article
